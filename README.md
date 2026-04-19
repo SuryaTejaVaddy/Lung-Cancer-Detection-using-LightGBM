@@ -1,12 +1,3 @@
- # Lung Cancer Detection using LightGBM
-
-  Early detection of lung cancer saves lives. This project applies a
-  **LightGBM classifier** on a real-world survey dataset to predict whether
-  a patient is at risk of lung cancer — using only symptom-based responses,
-  no lab tests or imaging required.
-
-  ---
-
   ## Project Details
 
   | Field | Details |
@@ -16,8 +7,7 @@
   | **Course** | Artificial Neural Networks |
   | **Instructor** | Mr. Sankara Rao |
   | **Academic Year** | 2021-22 |
-  | **Team** | Ch.Tulasi Latha · T.Vamshi · D.Anjaniputra Varma · V.Surya
-  Teja |
+  | **Team** | Ch.Tulasi Latha · T.Vamshi · D.Anjaniputra Varma · V.Surya Teja |
 
   ---
 
@@ -54,10 +44,10 @@
   ## Pipeline
 
   **1. Load Data**
-  Survey responses are read from `Lung_Cancer_Dataset.csv` using Pandas.
+  Survey responses are read from `survey_lung_cancer_dataset.csv` using Pandas.
 
   **2. Clean Data**
-  - 1 duplicate record is removed
+  - Duplicate records are removed
   - No missing values found across all 16 columns
 
   **3. Encode & Normalize**
@@ -65,23 +55,19 @@
   - Binary symptom values are rescaled from (1, 2) to (0, 1)
 
   **4. Handle Class Imbalance**
-  The dataset is heavily skewed (268 YES vs 16 NO). `RandomOverSampler` from
-   imbalanced-learn balances both classes to 267 each before training.
+  The dataset is heavily skewed (268 YES vs 16 NO). `RandomOverSampler` from imbalanced-learn balances both classes before training.
 
   **5. Split**
-  75% training / 25% testing with stratified sampling to preserve class
-  ratios.
+  75% training / 25% testing with stratified sampling to preserve class ratios.
 
   **6. Scale**
-  `StandardScaler` is applied to the AGE column only, so it does not
-  disproportionately influence the model.
+  `StandardScaler` is applied to the AGE column only, so it does not disproportionately influence the model.
 
   **7. Train**
   A `LGBMClassifier` is trained on the balanced, scaled training data.
 
   **8. Evaluate**
-  Model is evaluated on the held-out test set using a confusion matrix,
-  classification report, and accuracy score.
+  Model is evaluated on the held-out test set using a confusion matrix, classification report, and accuracy score.
 
   ---
 
@@ -94,7 +80,7 @@
   | **F1-Score** | 0.95 | 0.95 |
   | **Support** | 60 | 59 |
 
-  **Overall Accuracy: 94.95%**
+  **Overall Accuracy: 94.96%**
 
   ---
 
@@ -125,26 +111,21 @@
 
   Assignment/
   │
-  ├── lung_cancer_lgbm.py        # Full pipeline: load, process, train,
-  evaluate, predict
-  ├── Lung_Cancer_Dataset.csv    # Survey dataset (284 records, 16 columns)
-  ├── requirements.txt           # Python dependencies
-  └── README.md                  # Project documentation
+  ├── lung_cancer_lgbm.py              # Full pipeline: load, process, train, evaluate, predict
+  ├── survey_lung_cancer_dataset.csv   # Survey dataset (284 records, 16 columns)
+  ├── requirements.txt                 # Python dependencies
+  └── README.md                        # Project documentation
 
   ---
   References
 
-  - Kaggle Dataset:
-  https://www.kaggle.com/datasets/mysarahmadbhat/lung-cancer
+  - Kaggle Dataset: https://www.kaggle.com/datasets/mysarahmadbhat/lung-cancer
   - LightGBM Docs: https://lightgbm.readthedocs.io/
   - Scikit-learn Docs: https://scikit-learn.org/
 
-  **Key changes from your original:**
-  - Intro is shorter and more specific to this project
-  - Feature table now shows data type instead of vague descriptions
-  - "How It Works" renamed to **Pipeline** and each step directly references
-   actual code behavior (e.g., exact class counts, column names, library
-  names)
-  - Results table reflects actual test numbers, not rounded estimates
-  - Tech stack includes version numbers
-  - Project structure comments describe what the file actually does
+  Copy this exactly into your `README.md`, then push:
+
+  ```bash
+  git add README.md
+  git commit -m "Fix README with correct dataset filename and structure"
+  git push origin main
