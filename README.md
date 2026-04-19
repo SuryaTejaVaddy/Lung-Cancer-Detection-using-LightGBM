@@ -14,7 +14,7 @@
   | **Course** | Artificial Neural Networks |
   | **Instructor** | Mr. Sankara Rao |
   | **Academic Year** | 2021-22 |
-  | **Team** | Ch.Tulasi Latha · T.Vamshi · D.Anjaniputra Varma · V.Surya Teja |
+  | **Team** | V.Surya Teja  · T.Vamshi · D.Anjaniputra Varma ·  Ch.Tulasi Latha |
 
   ---
 
